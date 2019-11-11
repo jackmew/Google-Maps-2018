@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements
         if(mUserLocation == null){
             mUserLocation = new UserLocation();
             DocumentReference userRef = mDb.collection(getString(R.string.collection_users))
-                    .document(FirebaseAuth.getInstance().getUid());
+                    .document(FirebaseAuth.getInstance().getUid()); // unique user id
 
             userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements
                     Location location = task.getResult();
                     GeoPoint geoPoint = new GeoPoint(location.getLatitude(), location.getLongitude());
                     mUserLocation.setGeo_point(geoPoint);
-                    mUserLocation.setTimestamp(null);
+                    mUserLocation.setTimestamp(null); // if null, auto server timestamp
                     saveUserLocation();
                 }
             }

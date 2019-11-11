@@ -11,8 +11,8 @@ import java.util.Date;
 public class UserLocation {
 
     private User user;
-    private GeoPoint geo_point;
-    private @ServerTimestamp Date timestamp;
+    private GeoPoint geo_point; // firestore 命名
+    private @ServerTimestamp Date timestamp; // auto insert server timestamp
 
     public UserLocation(User user, GeoPoint geo_point, Date timestamp) {
         this.user = user;
