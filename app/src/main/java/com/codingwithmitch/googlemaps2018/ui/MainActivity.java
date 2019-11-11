@@ -106,8 +106,8 @@ public class MainActivity extends AppCompatActivity implements
                 if (task.isSuccessful()) {
                     Location location = task.getResult();
                     GeoPoint geoPoint = new GeoPoint(location.getLatitude(), location.getLongitude());
-                    Log.d(TAG, "onComplete: latitude: " + geoPoint.getLatitude());
-                    Log.d(TAG, "onComplete: longitude: " + geoPoint.getLongitude());
+                    Log.d(TAG, "getLastKnownLocation onComplete: latitude: " + geoPoint.getLatitude());
+                    Log.d(TAG, "getLastKnownLocation onComplete: longitude: " + geoPoint.getLongitude());
                 }
             }
         });
